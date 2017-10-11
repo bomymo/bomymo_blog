@@ -11,32 +11,40 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :subject %>
-    <%= form.text_field :subject, id: :blogpost_subject %>
-  </div>
+  <div class="work-box">
+    <div class="form-inline">
+      <div class="form-group  textfield-full">
+        <div class="input-group textfield-medium">
+          <label for="blogpost_author">Author</label>
+          <%= form.text_field :author, id: :blogpost_author, class: "form-control" %>
+        </div><!-- /input-group author -->
+        <div class="input-group push-right">
+          <label for="blogpost_blogdate">Date</label>
+          <%= form.date_select :blogdate, id: :blogpost_blogdate, class: "form-control" %>  
+        </div><!--/input-group date -->
+      </div><!-- /form group -->
+    </div><!-- /form-inline -->
 
-  <div class="field">
-    <%= form.label :blogentry %>
-    <%= form.text_area :blogentry, id: :blogpost_blogentry %>
-  </div>
+    <div class="field">
+      <p>Subject</p>
+      <!--<%= form.label :subject %>-->
+      <%= form.text_field :subject, id: :blogpost_subject, class: "textfield-full" %>
+    </div><!--/field subject -->
 
-  <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author, id: :blogpost_author %>
-  </div>
+    <div class="field">
+      <p>Entry</p>
+      <!-- <%= form.label :blogentry %> -->
+      <%= form.text_area :blogentry, id: :blogpost_blogentry, class: "textarea-full" %>
+    </div><!-- field blog entry -->
 
-  <div class="field">
-    <%= form.label :blogdate %>
-    <%= form.date_select :blogdate, id: :blogpost_blogdate %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image_url %>
-    <%= form.text_field :image_url, id: :blogpost_image_url %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<!--    <div class="field">     // Add image support later
+      <p>Image URL</p>
+      <!-- <%= form.label :image_url %> 
+      <%= form.text_field :image_url, id: :blogpost_image_url %>
+    </div>
+-->
+    <div class="actions">
+      <%= form.submit "Submit Entry" %>
+    </div>
+  </div><!-- /work-box -->
 <% end %>

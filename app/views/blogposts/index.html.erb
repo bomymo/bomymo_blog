@@ -1,35 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Blogposts</h1>
+<div class="header-indent">
+  <h1>Bomymo Blog</h1>
+  <h3>Blog your heart out</h3>
+</div><!-- /header-indent -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Subject</th>
-      <th>Blogentry</th>
-      <th>Author</th>
-      <th>Blogdate</th>
-      <th>Image url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="work-box">
+  <% @blogposts.each do |blogpost| %>
+    <p class="display-subject"><%= blogpost.subject %></p>
+    <p class="entry-summary">
+      <%= blogpost.blogentry[0, 100] %>...
+      <div class="align-right">
+        <%= link_to 'View', blogpost %>
+        <%= link_to 'Edit', edit_blogpost_path(blogpost) %>
+        <%= link_to 'Delete', blogpost, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </p>
 
-  <tbody>
-    <% @blogposts.each do |blogpost| %>
-      <tr>
-        <td><%= blogpost.subject %></td>
-        <td><%= blogpost.blogentry %></td>
-        <td><%= blogpost.author %></td>
-        <td><%= blogpost.blogdate %></td>
-        <td><%= blogpost.image_url %></td>
-        <td><%= link_to 'Show', blogpost %></td>
-        <td><%= link_to 'Edit', edit_blogpost_path(blogpost) %></td>
-        <td><%= link_to 'Destroy', blogpost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% end %>
+</div><!--/work-box -->
 
-<br>
-
-<%= link_to 'New Blogpost', new_blogpost_path %>

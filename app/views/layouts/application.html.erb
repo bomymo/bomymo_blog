@@ -3,7 +3,6 @@
   <head>
     <title>BomymoBlog</title>
     <%= csrf_meta_tags %>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,7 +10,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse custom-navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -23,7 +22,7 @@
         </div><!-- end navbar-header -->
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="<%= blogposts_path %>"</a>Home</li>
+            <li><a href="<%= blogposts_path %>">Home</a></li>
             <li><a href="<%= new_blogpost_path %>">New</a></li>
           </ul>
         </div><!-- end nav -->
@@ -31,5 +30,13 @@
     </nav><!-- end navbar -->
 
     <%= yield %>
+  
+    <footer>
+      <div class="footer-format">
+        <p>&copy; 2017 Robert Myers-Morgan</p>
+      </div>
+    </footer>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
   </body>
 </html>
