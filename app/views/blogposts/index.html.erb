@@ -1,13 +1,13 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
 
-<div class="header-indent">
+<div class="col-md-offset-2 col-md-8 col-md-offset-2">
   <h1>Bomymo Blog</h1>
   <h3>Blog your heart out</h3>
 </div><!-- /header-indent -->
 
-<div class="work-box">
-  <% @blogposts.each do |blogpost| %>
-    <p class="display-subject"><%= blogpost.subject %></p>
+<div class="col-md-offset-2 col-md-8 col-md-offset-2 work-box bottom-of-page">
+  <% @blogposts.reverse_each do |blogpost| %>
+    <p class="display-subject"><a href="/blogposts/<%= blogpost.id %>"><%= blogpost.subject %></a></p>
     <p class="entry-summary">
       <%= blogpost.blogentry[0, 100] %>...
       <div class="align-right">

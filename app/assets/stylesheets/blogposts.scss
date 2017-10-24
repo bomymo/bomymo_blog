@@ -3,8 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  margin-top: 20px;
+  margin-top: 50px;
   font-family: verdana, arial, helvetica, sans-serif;
+  background-color: #fdfdfd;
 }
 
 .form-control {      // override Bootstrap defaults to match Rails defaults!
@@ -39,7 +40,7 @@ label {
 
 .work-box {
   padding: 1em;
-  margin-right: 20%;
+//  margin-right: 20%;
   border-left: 1px solid #C2C2C2;
   border-right: 1px solid #C2C2C2;
 }
@@ -48,18 +49,25 @@ label {
   background-color: #eaeced;
 }
 
-.display-subject {
+.display-subject a {
   color: blue;
   font-size: 1.5em;  
+}
+
+.display-subject a:hover {
+  font-weight: bold;
+  background-color: #fff;
+  text-decoration: none;
+
 }
 
 .align-right {
   text-align: right;  
 }
 
-.work-box, .header-indent {
-  margin-left: 20%;
-}
+//.header-indent {
+//  margin-left: 20%;
+//}
 
 .textfield-full {
   width: 100%;
@@ -97,12 +105,16 @@ h4 {
   color: #316c7c;
 }
 
+.bottom-of-page {
+  margin-bottom: 30px;
+}
+
 .footer-format {
   clear: both;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f7fcb9;
+  background-color: #fff;
   /* make it sticky */
   position: fixed;
   left: 0;

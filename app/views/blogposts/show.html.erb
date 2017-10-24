@@ -1,12 +1,13 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
 
-<h1 class="header-indent"><%= @blogpost.subject %></h1>
+<h1 class="col-md-offset-2 col-md-8 col-md-offset-2"><%= @blogpost.subject %></h1>
 
-<div class="work-box">
+<div class="col-md-offset-2 col-md-8 col-md-offset-2 work-box">
   <h4>Posted by <%= @blogpost.author %> on <%= @blogpost.blogdate %></h4>
   <article class="article-box"><%= simple_format(@blogpost.blogentry) %></article>
 </div><!--/work-box -->
 
-<div class="header-indent">
+<div class="col-md-offset-2 col-md-8 col-md-offset-2 bottom-of-page text-right">
   <%= link_to 'Edit', edit_blogpost_path(@blogpost) %>
 </div>
+<br><br><br>

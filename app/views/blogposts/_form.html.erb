@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="work-box">
+  <div class="col-md-offset-2 col-md-8 col-md-offset-2 work-box">
     <div class="form-inline">
       <div class="form-group  textfield-full">
         <div class="input-group textfield-medium">
           <label for="blogpost_author">Author</label>
-          <%= form.text_field :author, id: :blogpost_author, class: "form-control" %>
+          <%= form.text_field :author, id: :blogpost_author, autofocus: true, class: "form-control" %>
         </div><!-- /input-group author -->
         <div class="input-group push-right">
           <label for="blogpost_blogdate">Date</label>
@@ -43,8 +43,8 @@
       <%= form.text_field :image_url, id: :blogpost_image_url %>
     </div>
 -->
-    <div class="actions">
-      <%= form.submit "Submit Entry" %>
+    <div class="actions bottom-of-page">
+      <%= form.submit "Submit Entry", class: "btn btn-primary" %>
     </div>
   </div><!-- /work-box -->
 <% end %>

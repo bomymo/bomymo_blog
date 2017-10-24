@@ -10,7 +10,13 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse custom-navbar-inverse">
+    <% if notice %>
+      <p class="alert alert-warning" role="alert"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger" role="alert"><%= alert %></p>
+    <% end %>
+    <nav class="navbar navbar-inverse custom-navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
