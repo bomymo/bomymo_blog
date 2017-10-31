@@ -57,3 +57,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-rails'
+
+# User login and administration
+gem 'devise'
+
+# User authorization
+gem 'cancancan', '~> 2.0'

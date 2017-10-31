@@ -16,7 +16,7 @@
       <div class="form-group  textfield-full">
         <div class="input-group textfield-medium">
           <label for="blogpost_author">Author</label>
-          <%= form.text_field :author, id: :blogpost_author, autofocus: true, class: "form-control" %>
+          <%= form.text_field :author, id: :blogpost_author, value: current_user.name, readonly: "readonly", class: "form-control" %>
         </div><!-- /input-group author -->
         <div class="input-group push-right">
           <label for="blogpost_blogdate">Date</label>
@@ -28,7 +28,7 @@
     <div class="field">
       <p>Subject</p>
       <!--<%= form.label :subject %>-->
-      <%= form.text_field :subject, id: :blogpost_subject, class: "textfield-full" %>
+      <%= form.text_field :subject, id: :blogpost_subject, autofocus: true, class: "textfield-full" %>
     </div><!--/field subject -->
 
     <div class="field">
@@ -39,8 +39,8 @@
 
 <!--    <div class="field">     // Add image support later
       <p>Image URL</p>
-      <!-- <%= form.label :image_url %> 
-      <%= form.text_field :image_url, id: :blogpost_image_url %>
+      <#%= form.label :image_url %> 
+      <#%= form.text_field :image_url, id: :blogpost_image_url %>
     </div>
 -->
     <div class="actions bottom-of-page">

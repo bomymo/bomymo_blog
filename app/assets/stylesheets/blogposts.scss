@@ -5,7 +5,7 @@
 body {
   margin-top: 50px;
   font-family: verdana, arial, helvetica, sans-serif;
-  background-color: #fdfdfd;
+  background-color: #f9f9f9;
 }
 
 .form-control {      // override Bootstrap defaults to match Rails defaults!
@@ -43,6 +43,7 @@ label {
 //  margin-right: 20%;
   border-left: 1px solid #C2C2C2;
   border-right: 1px solid #C2C2C2;
+  background-color: #ffffff;
 }
 
 .article-box {
@@ -164,4 +165,8 @@ h4 {
   .push-right {
     margin-left: 0;
   }  
+  h1 {
+    font-size: 28px;
+  }
 }
+

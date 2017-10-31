@@ -1,5 +1,6 @@
 class BlogpostsController < ApplicationController
   before_action :set_blogpost, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /blogposts
   # GET /blogposts.json
@@ -25,7 +26,7 @@ class BlogpostsController < ApplicationController
   # POST /blogposts.json
   def create
     @blogpost = Blogpost.new(blogpost_params)
-
+    @blogpost.user = current_user
     respond_to do |format|
       if @blogpost.save
         format.html { redirect_to @blogpost, notice: 'Blogpost was successfully created.' }
