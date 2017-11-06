@@ -2,10 +2,13 @@ class BlogpostsController < ApplicationController
   before_action :set_blogpost, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
 
+  helper_method :sort_column, :sort_direction
+
   # GET /blogposts
   # GET /blogposts.json
   def index
-    @blogposts = Blogpost.all
+    #@blogposts = Blogpost.all
+    @blogposts = Blogpost.order("#{sort_column} #{sort_direction}")
   end
 
   # GET /blogposts/1
@@ -62,6 +65,7 @@ class BlogpostsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blogpost
@@ -71,5 +75,17 @@ class BlogpostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def blogpost_params
       params.require(:blogpost).permit(:subject, :blogentry, :author, :blogdate, :image_url)
+    end
+
+    def sortable_columns
+      ["updated_at"]
+    end
+
+    def sort_column
+      sortable_columns.include?(params[:column]) ? params[:column] : "updated_at"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
     end
 end

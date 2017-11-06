@@ -6,11 +6,11 @@
 </div><!-- /header-indent -->
 
 <div class="col-md-offset-2 col-md-8 col-md-offset-2 work-box bottom-of-page">
-  <% @blogposts.reverse_each do |blogpost| %>
+  <% @blogposts.each do |blogpost| %>
     <p class="display-subject"><a href="/blogposts/<%= blogpost.id %>"><%= blogpost.subject %></a></p>
     <p class="entry-summary">
       <%= blogpost.blogentry[0, 100] %>...
-      <div class="align-right">
+      <div class="align-right">b.
         <%= link_to 'View', blogpost %>
         <%= link_to 'Edit', edit_blogpost_path(blogpost) %>
         <%= link_to 'Delete', blogpost, method: :delete, data: { confirm: 'Are you sure?' } %>
