@@ -8,6 +8,10 @@
 </div><!--/work-box -->
 
 <div class="col-md-offset-2 col-md-8 col-md-offset-2 bottom-of-page text-right">
-  <%= link_to 'Edit', edit_blogpost_path(@blogpost) %>
+  <% if current_user %>
+    <% if @blogpost.user_id == current_user.id %>
+      <%= link_to 'Edit', edit_blogpost_path(@blogpost) %>
+    <% end %>
+  <% end %>
 </div>
 <br><br><br>

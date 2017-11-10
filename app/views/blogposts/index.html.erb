@@ -10,10 +10,13 @@
     <p class="display-subject"><a href="/blogposts/<%= blogpost.id %>"><%= blogpost.subject %></a></p>
     <p class="entry-summary">
       <%= blogpost.blogentry[0, 100] %>...
-      <div class="align-right">b.
-        <%= link_to 'View', blogpost %>
-        <%= link_to 'Edit', edit_blogpost_path(blogpost) %>
-        <%= link_to 'Delete', blogpost, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <div class="align-right">
+        <% if current_user %>
+          <% if blogpost.user_id == current_user.id %>
+            <%= link_to 'Edit', edit_blogpost_path(blogpost) %>
+            <%= link_to 'Delete', blogpost, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        <% end %>
       </div>
     </p>
 
